@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Promoceny - zbiór najlepszych promocji</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            max-width: 1000px;
+            width: 100%;
+        }
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Styl pies</h1>
+<a href="/add">Dodaj klienta</a>
+<section th:if="${!clients.isEmpty()}">
+    <p>Poniżej znajdziesz listę klientów</p>
+    <table>
+        <thead>
+        <tr>
+            <td>Imię</td>
+            <td>Nazwisko</td>
+            <td>Numer telefonu</td>
+            <td>Edycja</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client: ${clients}" th:object="${client}">
+            <td th:text="*{firstName}"></td>
+            <td th:text="*{lastName}"></td>
+            <td th:text="*{phoneNumber}"></td>
+            <td><a th:href="@{updateClient/{id}(id=${client.id})}" >Edycja</a>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<h2 th:if="${clients.isEmpty()}">Brak klientów :(</h2>
+</body>
+</html>

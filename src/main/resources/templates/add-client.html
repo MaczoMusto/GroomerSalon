@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowy klient</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<body>
+<h1>Dodaj klienta</h1>
+<h2>Dane klienta:</h2>
+<form method="post" action="/saveClient">
+    <label>
+        Imię:
+        <input name="firstName" type="text">
+    </label>
+    <label>
+        Nazwisko:
+        <input name="lastName" type="text">
+    </label>
+    <label>
+        Numer telefonu:
+        <input name="phoneNumber" type="text">
+    </label>
+
+    <button type="submit">Dodaj</button>
+</form>
+</body>
+</html>

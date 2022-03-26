@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edycja klienta</title>
+</head>
+<body>
+<h1>Edycja klienta</h1>
+<form action="#" th:action="@{/saveClient}" th:object="${client} "method="POST">
+
+    <input type="hidden" th:field="*{id}" />
+    <div >
+        <label for="clientName">Imie</label>
+        <input type="text" th:field = "*{firstName}" id="clientName">
+    </div>
+    <div >
+        <label for="clientLastName">Nazwisko</label>
+        <input type="text" th:field = "*{lastName}" id="clientLastName">
+    </div>
+    <div >
+        <label for="clientPhoneNo">Numer telefonu</label>
+        <input type="text" th:field = "*{phoneNumber}" id="clientPhoneNo">
+    </div>
+    <div>
+        <button name="Dodaj">Zapisz zmiany</button>
+    </div>
+</form>
+</body>
+</html>

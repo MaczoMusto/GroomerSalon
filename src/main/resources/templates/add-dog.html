@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowy klient</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<body>
+<h1>Dodaj psa</h1>
+<h2>Dane psa:</h2>
+<form method="post" action="/addDog">
+    <label>
+        Imię:
+        <input name="name" type="text">
+    </label>
+    <label>
+        Rasa:
+        <input name="breed" type="text">
+    </label>
+    <label>
+        Wielkość:
+        <input name="size" type="text">
+    </label>
+
+    <button type="submit">Dodaj</button>
+</form>
+</body>
+</html>
